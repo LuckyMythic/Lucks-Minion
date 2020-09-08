@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
                 { name: 'Admin', value:"`addrole` `ban` `deletemsg` `kick` `mute` `removerole` `setbotname` `setbotstatus`}
                 
                 )
-            .setfooter("bbbBbBbB");
+            .setFooter("bbbBbBbB");
         message.channel.send(embed);    
     }
 
