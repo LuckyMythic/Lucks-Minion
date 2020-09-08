@@ -10,7 +10,9 @@ exports.run = (client, message, args) => {
             .setTitle("Commands")
             .addFields(
                 { name: 'Admin', value:"`addrole` `ban` `deletemsg` `kick` `mute` `removerole` `setbotname` `setbotstatus`"}
-                
+                { name: 'Info', value:"`help` `serverinfo` `serverinvite` `uptime` `userinfo`}
+                { name: 'Music', value:"`deletetrack` `joinchannel` `nowplaying` `pause` `resume` `playother` `playtube` `queue` `skip` `stop` `volume` `ytsearch`"}
+                { name: 'Fun', value:"`distance` `dogs` `flipcoin` `google` `ping` `randomcolor` `rolldice` `setafk` `weather`
                 )
             .setFooter("bbbBbBbB");
         message.channel.send(embed);    
