@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
             .setColor("#FF4500")
             .setTitle("Commands")
             .addFields(
-                { name: 'Admin', value:"`addrole` `ban` `deletemsg` `kick` `mute` `removerole` `setbotname` `setbotstatus`}
+                { name: 'Admin', value:"`addrole` `ban` `deletemsg` `kick` `mute` `removerole` `setbotname` `setbotstatus`"}
                 
                 )
             .setFooter("bbbBbBbB");
