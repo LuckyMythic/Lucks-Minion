@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
                 { name: 'Music', value:"`deletetrack` `joinchannel` `nowplaying` `pause` `resume` `playother` `playtube` `queue` `skip` `stop` `volume` `ytsearch`"},
                 { name: 'Fun', value:"`distance` `dogs` `flipcoin` `google` `ping` `randomcolor` `rolldice` `setafk` `weather`"}
                 )
-            .setFooter('Join for updates and more!, [https://discord.gg/Managerie] (https://discord.gg/BXEtkBQ)';
+            .setFooter('Join for updates and more!, [https://discord.gg/Managerie] (https://discord.gg/BXEtkBQ))';
         message.channel.send(embed);    
     }
 
