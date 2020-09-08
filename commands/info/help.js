@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
                 { name: 'Music', value:"`deletetrack` `joinchannel` `nowplaying` `pause` `resume` `playother` `playtube` `queue` `skip` `stop` `volume` `ytsearch`"},
                 { name: 'Fun', value:"`distance` `dogs` `flipcoin` `google` `ping` `randomcolor` `rolldice` `setafk` `weather`"}
                 )
-            .addField('Join for updates and more!, [https://discord.gg/Managerie] (https://discord.gg/BXEtkBQ), true')
+            .addField('Join us for updates and more! https://discord.gg/BXEtkBQ')
             .setFooter("Bot made by LuckyMythical#5528");
         message.channel.send(embed);    
     }
