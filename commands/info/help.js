@@ -12,9 +12,9 @@ exports.run = (client, message, args) => {
                 { name: 'Admin', value:"`addrole` `ban` `deletemsg` `kick` `mute` `removerole` `setbotname` `setbotstatus`"}
                 { name: 'Info', value:"`help` `serverinfo` `serverinvite` `uptime` `userinfo`}
                 { name: 'Music', value:"`deletetrack` `joinchannel` `nowplaying` `pause` `resume` `playother` `playtube` `queue` `skip` `stop` `volume` `ytsearch`"}
-                { name: 'Fun', value:"`distance` `dogs` `flipcoin` `google` `ping` `randomcolor` `rolldice` `setafk` `weather`
+                { name: 'Fun', value:"`distance` `dogs` `flipcoin` `google` `ping` `randomcolor` `rolldice` `setafk` `weather`"}
                 )
-            .setFooter("bbbBbBbB");
+            .setFooter('Join for updates and more!, [https://discord.gg/Managerie] (https://discord.gg/BXEtkBQ);
         message.channel.send(embed);    
     }
 
