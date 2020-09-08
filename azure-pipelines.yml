@@ -1,0 +1,26 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  imageName: 'RaptorSA'
+
+steps:
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: $(imageName)
+    command: build
+    Dockerfile: Dockerfile
+
+- task: UseNode@1
+  inputs:
+    version: '12.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm update ytdl-core
+  displayName: 'npm install'
