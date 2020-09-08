@@ -7,7 +7,11 @@ exports.run = (client, message, args) => {
     if(command[1] == undefined){
         const embed = new Discord.MessageEmbed()
             .setColor("#FF4500")
-            .addField("Commands",`You can view commands on [pastebin.com](https://pastebin.com/6NTre5gJ)`)
+            .setTitle("Commands")
+            .addFields(
+                { name: 'Admin', value:"`addrole` `ban` `deletemsg` `kick` `mute` `removerole` `setbotname` `setbotstatus`}
+                
+                )
             .setfooter("bbbBbBbB");
         message.channel.send(embed);    
     }
