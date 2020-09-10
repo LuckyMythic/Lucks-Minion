@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
                 { name: 'Admin', value:"`addrole` `ban` `purge` `kick` `mute` `removerole` `setbotname` `setbotstatus`"},
                 { name: 'Info', value:"`help` `serverinfo` `serverinvite` `uptime` `userinfo`"},
                 { name: 'Music', value:"`deletetrack` `joinchannel` `nowplaying` `pause` `resume` `playother` `playtube` `queue` `skip` `stop` `volume` `ytsearch`"},
-                { name: 'Fun', value:"`distance` `dogs` `flipcoin` `google` `ping` `randomcolor` `rolldice` `setafk` `weather`"}
+                { name: 'Fun', value:"`distance` `dogs` `flipcoin` `google` `ping` `rolldice` `setafk` `weather`"}
                 )
             .addField('Join us for updates and more!', 'https://discord.gg/BXEtkBQ', true)
             .setImage('https://cdn.discordapp.com/attachments/671449376111067136/671451868869820466/rainbow_lines.gif')
