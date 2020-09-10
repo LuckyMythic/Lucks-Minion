@@ -21,7 +21,7 @@ exports.run = async (client, message, args, ops) => {
         collector.videos = videos;
 
         collector.once('collect', function(m){
-            let commandFile = require ("./playtube.js");
+            let commandFile = require ("./play.js");
             commandFile.run(client, message, [this.videos[parseInt(m.content)-1].url], ops);
         });
 
