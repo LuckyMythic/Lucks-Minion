@@ -1,9 +1,9 @@
 {
   "name": "Luck's Minion",
   "version": "2.0.0",
-  "description": "ree ree, no description needed",
+  "description": "Run help at vp.help",
   "main": "index.js",
-  "token": "NjA3Njk5NDU5MjgyODI5MzUz.XUdaOQ.Mv36KdolGwBgGV3drGWBu0T9QBw",
+  "token": "NzI20TM1NjUw0TU5MzYwMTkz.XvkhlQ.FQNpRWJC8hAfvnwkdQS7CYxwXN8",
   "author": "LuckyMythical",
-  "prefix": "e"
+  "prefix": "vp."
 }
