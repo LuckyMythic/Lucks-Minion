@@ -3,5 +3,5 @@ module.exports = (client) => {
 
 	client.user.setStatus('online');
 
-	client.user.setActivity('Listening to vp.help');
+	client.user.setActivity('for vp.help', { type: 'LISTENING' });
 };
