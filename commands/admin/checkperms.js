@@ -11,4 +11,4 @@ exports.run = async (client, message, args) =>{
 
     message.channel.send("You have perms to manage messages.");
     }
-    
+}
