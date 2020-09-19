@@ -21,7 +21,8 @@
     "yql": "^1.0.2",
     "yt-search": "^1.1.2",
     "ytdl-core": "^2.1.5",
-    "alexflipnote.js": "^1.2.3"
+    "alexflipnote.js": "^1.2.3",
+    "js-beautify": "^1.13.0"
   },
   "devDependencies": {},
   "scripts": {
