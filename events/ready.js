@@ -3,5 +3,5 @@ module.exports = (client) => {
 
 	client.user.setStatus('online');
 
-	client.user.setActivity('for vp.help', { type: 'WATCHING' });
+	client.user.setActivity('HELP! IM NOT DEAD!!!', { type: 'WATCHING' });
 };
