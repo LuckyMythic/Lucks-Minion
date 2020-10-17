@@ -1,3 +1,4 @@
+const client = new Discord.client();
 global.mana = false;
 
 exports.run = async (bot, message, args) => {
