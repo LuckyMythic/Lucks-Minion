@@ -1,6 +1,6 @@
 var mana = false;
 
-exports.run async (bot, message, args) => {
+exports.run = async (bot, message, args) => {
   if(!message.member.hasPermission("KICK_MEMBERS")){
   if mana = false{
     mana = true;
