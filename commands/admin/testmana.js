@@ -11,6 +11,6 @@ exports.run = async (bot, message, args) => {
  }
 client.on('message', message => {
         if (mana = true) {
-    message.channel.send("+<:Mana:766853530312376340>")
+    message.channel.send("+<:Mana:766853530312376340>");
     }
-});
+};
