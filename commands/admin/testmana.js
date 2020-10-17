@@ -1,4 +1,4 @@
-var mana = require('mana');
+var mana = false;
 
 exports.run async (bot, message, args) => {
   if(!message.member.hasPermission("KICK_MEMBERS")){
