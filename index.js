@@ -4,7 +4,7 @@ const Enmap = require("enmap");
 const client = new Discord.Client();
 const fs = require('fs');
 const Secret = require('secret.CONFIG')
-client.config = Secret;
+client.config = config;
 
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
