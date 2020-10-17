@@ -3,7 +3,6 @@ const config = require("./jsonFiles/config.json");
 const Enmap = require("enmap");
 const client = new Discord.Client();
 const fs = require('fs');
-const Secret = require('secret.CONFIG')
 client.config = config;
 
 fs.readdir("./events/", (err, files) => {
