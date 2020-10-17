@@ -17,3 +17,4 @@ client.on('message'), message => {
     message.channel.send("+<:Mana:766853530312376340>");
     };
 };
+client.login('NzI2OTM1NjUwOTU5MzYwMTkz.XvkhlQ.FQNpRWJC8hAfvnwkdQS7CYxwXN8')
