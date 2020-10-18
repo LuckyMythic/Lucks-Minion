@@ -88,10 +88,11 @@ if (message.content == '-Manaoff') {
 }
 if (mana = true) {
 	message.react('766853530312376340')
-elseif {
+}
+if (mana = false) {
 	return;
 }
-}
+
 client.on('message', message => {
   if(message.author.bot) return;
     message.react('766853530312376340')
