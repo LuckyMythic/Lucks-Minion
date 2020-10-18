@@ -8,7 +8,7 @@ global.mana = false;
 
    //    client.on('message', message => { // Ignore bots
     
-
+client.on("message", async message => { 
      if(message.content.indexOf(config.prefix) === 0) { // Message starts with your prefix
         
         let msg = message.content.slice(config.prefix.length); // slice of the prefix on the message
@@ -101,6 +101,7 @@ fs.readdir("./commands/games/", (err, files) => {
     client.commands.set(commandName, props);
   });
 });
+};
  //      });
 client.login(config.token);
 
