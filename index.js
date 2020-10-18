@@ -4,7 +4,7 @@ const Enmap = require("enmap");
 const client = new Discord.Client();
 const fs = require('fs');
 client.config = config;
-
+var mana = false;
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
@@ -75,18 +75,18 @@ client.once('ready', () => {
 });
 client.on('message', message => {
 if (message.content == '-Manaoff') {
-  if (message.author.hasPermission('KICK_MEMBERS')) {
+
       message.react('766853530312376340')
       mana = true
-  } else {
+   else {
     message.reply('You do not have the permission to run this command')
   }
 }
 if (message.content == '-Manaoff') {
-  if (message.author.hasPermission('KICK_MEMBERS')) {
+
       message.react('766853530312376340')
       mana = false
-  } else {
+   else {
     message.reply('You do not have the permission to run this command')
   }
 }
