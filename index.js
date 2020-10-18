@@ -4,7 +4,40 @@ const Enmap = require("enmap");
 const client = new Discord.Client();
 const fs = require('fs');
 client.config = config;
+global.mana = false;
+bot.on("message", async message => { 
 
+    if(message.author.bot || message.system) return; // Ignore bots
+    
+    if(message.channel.type === 'dm') { // Direct Message
+        return; //Optionally handle direct messages
+    } 
+     if (message.content.indexOf(config.prefix) === 0) { // Message starts with your prefix
+        
+        let msg = message.content.slice(config.prefix.length); // slice of the prefix on the message
+
+        let args = msg.split(" "); // break the message into part by spaces
+
+        let cmd = args[0].toLowerCase(); // set the first word as the command in lowercase just in case
+
+        args.shift(); // delete the first word from the args
+
+        
+        if (cmd === 'togggle mana' || cmd === 'mana') {
+             if(!message.member.hasPermission("KICK_MEMBERS")){
+  if (mana = false) {
+    mana = true;
+  }
+  if (mana = true) {
+    mana = false;
+  }
+ }
+}
+         client.on('message'), message => {
+                     if (mana = true) {
+    message.channel.send("+<:Mana:766853530312376340>");
+    }
+};
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
     files.forEach(file => {
