@@ -8,9 +8,7 @@ global.mana = false;
 
    //    client.on('message', message => { // Ignore bots
     
-    if(message.channel.type === 'dm') { // Direct Message
-        return; //Optionally handle direct messages
-    } 
+
      if (message.content.indexOf(config.prefix) === 0) { // Message starts with your prefix
         
         let msg = message.content.slice(config.prefix.length); // slice of the prefix on the message
