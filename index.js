@@ -80,7 +80,7 @@ if (message.content == '-Manaoff') {
       mana = true
 
 }
-else (message.content == '-Manaoff') {
+if (message.content == '-Manaoff') {
 
       message.react('766853530312376340')
       mana = false
