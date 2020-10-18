@@ -5,7 +5,7 @@ const client = new Discord.Client();
 const fs = require('fs');
 client.config = config;
 global.mana = false;
-bot.on("message", async message => { 
+
 
     if(message.author.bot || message.system) return; // Ignore bots
     
@@ -104,6 +104,6 @@ fs.readdir("./commands/games/", (err, files) => {
     client.commands.set(commandName, props);
   });
 });
-});
+
 client.login(config.token);
 
