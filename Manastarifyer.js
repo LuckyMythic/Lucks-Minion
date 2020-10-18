@@ -29,4 +29,4 @@ client.on('message', message => {
     message.react('766853530312376340')
 })});
 
-client.login('Token');
+client.login('NzI2OTM1NjUwOTU5MzYwMTkz.XvkhlQ.FQNpRWJC8hAfvnwkdQS7CYxwXN8');
