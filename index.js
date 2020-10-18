@@ -73,30 +73,30 @@ fs.readdir("./commands/games/", (err, files) => {
 client.once('ready', () => {
 	console.log('logged on');
 });
-client.on('message', message => {
-if (message.content == '-Manaon') {
+//client.on('message', message => {
+//if (message.content == '-Manaon') {
 
 
-      mana = true
+//      mana = true
 
-}
-if (message.content == '-Manaoff') {
+//}
+//if (message.content == '-Manaoff') {
 
 
-      mana = false
+//      mana = false
 
-}
-if (mana = true) {
-	message.react('766853530312376340')
-}
-if (mana = false) {
-	return;
-}
+//}
+//if (mana = true) {
+//	message.react('766853530312376340')
+//}
+//if (mana = false) {
+//	return;
+//}
 
-client.on('message', message => {
-  if(message.author.bot) return;
-    message.react('766853530312376340')
-})});
+//client.on('message', message => {
+//  if(message.author.bot) return;
+//    message.react('766853530312376340')
+//})});
 
 client.login(config.token);
 
