@@ -74,19 +74,24 @@ client.once('ready', () => {
 	console.log('logged on');
 });
 client.on('message', message => {
-if (message.content == '-Manaoff') {
+if (message.content == '-Manaon') {
 
-      message.react('766853530312376340')
+
       mana = true
 
 }
 if (message.content == '-Manaoff') {
 
-      message.react('766853530312376340')
+
       mana = false
 
 }
-
+if (mana = true) {
+	message.react('766853530312376340')
+else {
+	return;
+}
+}
 client.on('message', message => {
   if(message.author.bot) return;
     message.react('766853530312376340')
