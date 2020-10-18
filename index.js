@@ -6,8 +6,7 @@ const fs = require('fs');
 client.config = config;
 global.mana = false;
 
-
-    if(message.author.bot || message.system) return; // Ignore bots
+       client.on("message", message => { // Ignore bots
     
     if(message.channel.type === 'dm') { // Direct Message
         return; //Optionally handle direct messages
@@ -104,6 +103,6 @@ fs.readdir("./commands/games/", (err, files) => {
     client.commands.set(commandName, props);
   });
 });
-
+       });
 client.login(config.token);
 
