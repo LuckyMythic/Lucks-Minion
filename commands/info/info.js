@@ -41,7 +41,7 @@ exports.run = (client, message, args) =>{
         .addField(`Creator`,`LuckyMyth#5529`, true)
         .addField(`Servers`, `${servers}`, true)
         .addField(`Users`, `${users}`, true)
-        .addField(`Invite`, `[Invite Luck's Minion](https://discord.com/oauth2/authorize?client_id=607699459282829353&scope=bot&permissions=26)`, true)
+        .addField(`Invite`, `[Invite Luck's Minion](https://discord.com/oauth2/authorize?client_id=726935650959360193&scope=bot&permissions=26)`, true)
         .setFooter(`Uptime: ${uptime}`);
 
     message.channel.send(serverembed);    
