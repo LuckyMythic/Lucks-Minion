@@ -8,7 +8,7 @@ global.mana = false;
 
    //    client.on('message', message => { // Ignore bots
     
-client.on("message", async message => { 
+client.on("message", message => { 
      if(message.content.indexOf(config.prefix) === 0) { // Message starts with your prefix
         
         let msg = message.content.slice(config.prefix.length); // slice of the prefix on the message
