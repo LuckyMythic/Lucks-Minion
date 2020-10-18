@@ -9,7 +9,7 @@ global.mana = false;
    //    client.on('message', message => { // Ignore bots
     
 
-     if (message.content.indexOf(config.prefix) === 0) { // Message starts with your prefix
+     if(message.content.indexOf(config.prefix) === 0) { // Message starts with your prefix
         
         let msg = message.content.slice(config.prefix.length); // slice of the prefix on the message
 
@@ -20,12 +20,12 @@ global.mana = false;
         args.shift(); // delete the first word from the args
 
         
-        if (cmd === 'togggle mana' || cmd === 'mana') {
+        if(cmd === 'togggle mana' || cmd === 'mana') {
              if(!message.member.hasPermission("KICK_MEMBERS")){
-  if (mana = false) {
+  if(mana = false) {
     mana = true;
   }
-  if (mana = true) {
+  if(mana = true) {
     mana = false;
   }
  }
