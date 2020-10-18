@@ -88,7 +88,7 @@ if (message.content == '-Manaoff') {
 }
 if (mana = true) {
 	message.react('766853530312376340')
-else {
+elseif {
 	return;
 }
 }
