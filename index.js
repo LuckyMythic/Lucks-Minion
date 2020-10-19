@@ -80,9 +80,9 @@ client.on('messageUpdate', function(oldMessage, newMessage) {
     if (newMessage.channel.type == 'text' && newMessage.cleanContent != oldMessage.cleanContent) {
 
         //log to console
-        console.log('[' + newMessage.guild.name + '][#' + newMessage.channel.name + '][UPDMSG] ' +
-            newMessage.author.username + '#' + newMessage.author.discriminator + ':\n\tOLDMSG: ' +
-            formatConsoleMessage(oldMessage) + '\n\tNEWMSG: ' + formatConsoleMessage(newMessage));
+       // console.log('[' + newMessage.guild.name + '][#' + newMessage.channel.name + '][UPDMSG] ' +
+       //     newMessage.author.username + '#' + newMessage.author.discriminator + ':\n\tOLDMSG: ' +
+       //     formatConsoleMessage(oldMessage) + '\n\tNEWMSG: ' + formatConsoleMessage(newMessage));
 
         //post in the guild's log channel
         var log = newMessage.guild.channels.find('name', CHANNEL);
