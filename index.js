@@ -4,7 +4,7 @@ const Enmap = require("enmap");
 const client = new Discord.Client();
 const fs = require('fs');
 client.config = config;
-const CHANNEL = 'logs';
+
 var mana = false;
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
@@ -74,24 +74,7 @@ fs.readdir("./commands/games/", (err, files) => {
 client.once('ready', () => {
 	console.log('logged on');
 });
-//message update
-client.on('messageUpdate', function(oldMessage, newMessage) {
 
-    if (newMessage.channel.type == 'text' && newMessage.cleanContent != oldMessage.cleanContent) {
-
-        //log to console
-       // console.log('[' + newMessage.guild.name + '][#' + newMessage.channel.name + '][UPDMSG] ' +
-       //     newMessage.author.username + '#' + newMessage.author.discriminator + ':\n\tOLDMSG: ' +
-       //     formatConsoleMessage(oldMessage) + '\n\tNEWMSG: ' + formatConsoleMessage(newMessage));
-
-        //post in the guild's log channel
-        var log = newMessage.guild.channels.find('name', CHANNEL);
-        if (log != null)
-            log.sendMessage('**[Message Updated]** *' + newMessage.author + '*:\n*Old Message*: ' + oldMessage.cleanContent +
-                '\n*New Message*: ' + newMessage.cleanContent);
-    }
-
-});
 //client.on('message', message => {
 //if (message.content == '-Manaon') {
 
