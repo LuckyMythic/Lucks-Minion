@@ -3,7 +3,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
 	//if (!id) return message.reply('You need to give an ID of the message to pin');
 	if (!id) await message.channel.fetchMessages({ limit: 2 }).then((m) => id = m.array()[1].id);
 
-	message.channel.fetchMessage(id).then((m) => {
+	message.channel.messages.fetch(id).then((m) => {
 		m.pin().then(() => {
 			message.reply('Message pinned');
 			client.log('INFO', `Message with ID of ${id} was pinned in ${message.channel.name} (${message.channel.id}) on guild ${message.guild.name} (${message.guild.id})`);
