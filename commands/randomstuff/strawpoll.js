@@ -1,4 +1,4 @@
-const { Command } = require('discord.js-commando');
+/*const { Command } = require('discord.js-commando');
 const request = require('request-promise');
 const { oneLine, stripIndents } = require('common-tags');
 
@@ -79,4 +79,4 @@ module.exports = class StrawpollCommand extends Command {
 		`);
 	}
 };
-
+*/
