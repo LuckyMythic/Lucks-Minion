@@ -27,7 +27,7 @@ module.exports = (client, message) => {
     } else {
 
         // Run the command
-        exports.run(client, message, args, ops);
+        cmd.run(client, message, args, ops);
 
         // Adds the user to the set so that they can't talk for a minute
         talkedRecently.add(message.author.id);
