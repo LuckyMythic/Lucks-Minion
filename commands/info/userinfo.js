@@ -65,7 +65,7 @@ exports.run = (client, message, args) =>{
 
     const embed = new Discord.MessageEmbed()
         .setDescription(`<@${member.user.id}>`)
-        .setAuthor(`${member.user.tag}`, member.user.avatarURL)
+        .setAuthor(`${member.user.tag}`, member.user.avatarURL({ dynamic:true }))
         .setColor(randomColor)
         .setFooter(`ID: ${message.author.id}`)
         .setThumbnail(member.user.displayAvatarURL)
