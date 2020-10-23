@@ -1,41 +1,73 @@
 const ytdl = require('ytdl-core');
-const { Util } = require("discord.js")
-const fs = require("fs")
-exports.run = async (client, message, args) => {
-if (!message.member.voice.channel) return message.channel.send({embed: {color: client.colors.error, description: `${client.emotes.error} | You must be in a voice channel to play!`}});
-  
-if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return message.channel.send({embed: {color: client.colors.error, description: `${client.emotes.error} | You are not in my voice channel!`}});
 
-let query = args.join(" ");
-if (!query) return message.channel.send({embed: {color: client.colors.error, description: `${client.emotes.error} | Please enter a query to search!` }})
+exports.run = async (client, message, args, ops) => {
+    voiceChannel = message.member.voice.channel;
+    if(!voiceChannel)
+        return message.channel.send("You are not in a voice channel");
+    const permissions = voiceChannel.permissionsFor(message.client.user);
+    if(!permissions.has('CONNECT'))
+        return message.channel.send("You don't have the right permissions");
+    if(!permissions.has('SPEAK'))
+        return message.channel.send("You don't have the right permissions to speak");
 
-const searchTracks = await client.player.searchTracks(query).catch(e => {
-  return message.channel.send({embed: {color: client.colors.error, description: `${client.emotes.error} | No results found!`}})
-});
+    let validate = await ytdl.validateURL(args[0]);
 
-if(searchTracks.length < 1) return message.channel.send({embed: {color: client.colors.error, description: `${client.emotes.error} | No results found!`}})
-  
-let track = searchTracks[0];
+    if(!validate)
+        return message.channel.send("Enter a valid youtube url please!");
 
+    let info = await ytdl.getInfo(args[0]);
 
-if(client.player.isPlaying(message.guild.id)){
-    // Add the song to the queue
-    let song = await client.player.addToQueue(message.guild.id, track, message.member.user.tag);
-   return message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.success} | ${Util.escapeMarkdown(song.name)} by ${Util.escapeMarkdown(song.author)}  Added to the queue!` }})
-} else {
-    // Else, play the song
-    let song = await client.player.play(message.member.voice.channel, track, message.member.user.tag);
-    message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.music} | Now Playing:\n${song.name}` }})
-    client.player.getQueue(message.guild.id).on('end', () => {
-    message.channel.send({embed: {color: client.colors.warning, description: `${client.emotes.warning} | Queue completed, add some more songs to play!` }})
+    let data = ops.active.get(message.guild.id) || {};
+
+    if(!data.connection) 
+        data.connection = await message.member.voice.channel.join();
+    if(!data.queue)
+        data.queue = [];
+    data.guildID = message.guild.id;
+    
+    data.queue.push({
+        songTitle: info.title,
+        requester: message.author.tag,
+        url: args[0],
+        announceChannel: message.channel.id
     });
 
-    client.player.getQueue(message.guild.id).on('trackChanged', (oldSong, newSong, skipped, repeatMode) => {
-        if(repeatMode){
-            message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.repeat} | Repeating:\n ${oldSong.name}` }})
-        } else {
-            message.channel.send({embed: {color: client.colors.success, description: `${client.emotes.music} | Now Playing:\n ${newSong.name}` }})
-        }
+    if(!data.dispatcher) play(client, ops, data);
+
+    else
+        message.channel.send(`Added to queue: **${info.title}** | requested by **${message.author.username}**`);
+
+    ops.active.set(message.guild.id, data);
+}
+
+async function play(client, ops, data){
+
+    data.dispatcher = await data.connection.play(ytdl(data.queue[0].url, {filter: 'audioonly'}));
+
+    data.dispatcher.guildID = data.guildID;
+
+    data.dispatcher.once('end', function(){
+        finish(client, ops, this);
     });
 }
+
+function finish(client, ops, dispatcher){
+    let fetched = ops.active.get(dispatcher.guildID);
+
+    fetched.queue.shift();
+
+    if(fetched.queue.length > 0){
+        ops.active.set(dispatcher.guildID, fetched);
+
+        play(client, ops, fetched);
+    }
+
+    else{
+
+        ops.active.delete(dispatcher.guildID);
+
+        let vc = client.guilds.get(dispatcher.guildID).me.voiceChannel;
+
+        if(vc) vc.leave();
+    }
 }
