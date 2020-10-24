@@ -1,5 +1,16 @@
 exports.run = async (client, message, args, ops) => {
+  formatDuration(durationObj) {
+    const duration = `${durationObj.hours ? durationObj.hours + ':' : ''}${
+      durationObj.minutes ? durationObj.minutes : '00'
+    }:${
+      durationObj.seconds < 10
+        ? '0' + durationObj.seconds
+        : durationObj.seconds
+        ? durationObj.seconds
+        : '00'
+    }`;
 
+  }
     let fetched = ops.active.get(message.guild.id);
     if(!fetched)
         return message.channel.send("There isn't any music playing in this guild!");
