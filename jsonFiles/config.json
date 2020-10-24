@@ -3,7 +3,7 @@
   "version": "2.8.6",
   "description": "Run help at vp.help",
   "main": "index.js",
-  "token": "NzI2OTM1NjUwOTU5MzYwMTkz.XvkhlQ.FQNpRWJC8hAfvnwkdQS7CYxwXN8",
+  "token": "NzI2OTM1NjUwOTU5MzYwMTkz.XvkhlQ.ERhnvUxNhBn51YIEcOA75yjMiTo",
   "author": "LuckyMythical",
   "prefix": "vp.",
   "clientMap": { "web": "🌐", "mobile": "📱", "desktop": "💻" },
